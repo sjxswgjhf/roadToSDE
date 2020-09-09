@@ -1,0 +1,62 @@
+package microsoft;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
+public class levelOrder {
+
+    class Solution {
+        public List<List<Integer>> levelOrder(TreeNode root) {
+            List<List<Integer>> levels = new ArrayList<List<Integer>>();
+            if (root == null) return levels;
+
+            Queue<TreeNode> queue = new LinkedList<TreeNode>();
+            queue.add(root);
+            int level = 0;
+            while ( !queue.isEmpty() ) {
+                // start the current level
+                levels.add(new ArrayList<Integer>());
+
+                // number of elements in the current level
+                int level_length = queue.size();
+                for(int i = 0; i < level_length; ++i) {
+                    TreeNode node = queue.remove();
+
+                    // fulfill the current level
+                    levels.get(level).add(node.val);
+
+                    // add child nodes of the current level
+                    // in the queue for the next level
+                    if (node.left != null) queue.add(node.left);
+                    if (node.right != null) queue.add(node.right);
+                }
+                // go to next level
+                level++;
+            }
+            return levels;
+        }
+    }
+
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        helper(root, res, 0);
+        return res;
+    }
+
+    private void helper(TreeNode node, List<List<Integer>> res, int level){
+        if(node == null){
+            return;
+        }
+        if(res.size() == level){
+            res.add(new ArrayList<>());
+        }
+        List<Integer> list = res.get(level);
+        list.add(node.val);
+        helper(node.left, res, level+1);
+        helper(node.right, res, level+1);
+
+    }
+
+}
