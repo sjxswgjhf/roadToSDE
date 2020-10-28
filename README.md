@@ -1,2 +1,2 @@
 # My Road To SDE. 
-## Each folder is the explore to the company based on LeetCode.
+## Each folder is the hot question to the company based on LeetCode.
