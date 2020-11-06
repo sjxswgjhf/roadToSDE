@@ -2,7 +2,7 @@ package dailyProblem;
 
 import java.util.*;
 
-public class lt1547 {
+public class lt1547minCost {
 
     class SolutionFast {
         public int minCost(int n, int[] cuts) {
