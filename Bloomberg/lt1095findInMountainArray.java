@@ -7,17 +7,9 @@ interface MountainArray {
 
 public class lt1095findInMountainArray {
 
-    /**
-     * // This is MountainArray's API interface.
-     * // You should not implement it, or speculate about its implementation
-     * interface MountainArray {
-     *     public int get(int index) {}
-     *     public int length() {}
-     * }
-     */
 
 
-    class Solution {
+    class SolutionTLE {
         /*
         这题知道了peak的位置就很好做了。
         一开始想着不去找peak，通过情况分析去做，然后发现情况太多了，写的代码不能全部覆盖而且十分杂乱难懂，
