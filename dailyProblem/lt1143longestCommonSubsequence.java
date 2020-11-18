@@ -12,6 +12,9 @@ public class lt1143longestCommonSubsequence {
         if i == j, then dp[i][j] = dp[i-1][j-1]
         else
         dp[i][j] should either include dp[i-1][j] or dp[i][j-1]   这里表示当前不当等的情况的长度就是之前两种里面取一种long的长度
+        dp[i][j] is LCS of first i character in A and first j Character in B
+
+
         */
         public int longestCommonSubsequence(String text1, String text2) {
             int m = text1.length();
