@@ -10,7 +10,7 @@ public class problemProducer {
 //        int[] pros = new int[numOfLt + 1];
         for(int i = 0; i < 5; i++){
             int proNum = rand.nextInt(numOfLt) + 1;
-            System.out.println(proNum);
+            System.out.print(proNum + ", ");
 //            pros[proNum]++;
         }
 //        int max = 0;

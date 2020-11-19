@@ -29,8 +29,10 @@ public class lt1545findKthBit {
                 return '1';
             }
             else if(k > len / 2 + 1){
+                //找到左边的返回相反的
                 return findKthBit(n - 1, len - k + 1) == '0' ? '1' : '0';
             }else{
+                //直接找左边的
                 return findKthBit(n - 1, k);
             }
         }

@@ -16,6 +16,9 @@ public class lt1638countSubStrings {
                     extend
         这样的话是n^3的做法，extend还要是O(n)，那么我们如果提前知道了当前i，jpair的左右相同长度，我们就可以用o(1)来做了，这个就是动态规划
         dp[i][j] = i == j ? dp[i-1][j-1]+1:0
+        BF => extend => extend + dp
+        n^4 => n^3 => n^2
+
         */
         public int countSubstrings(String s, String t) {
             int m = s.length();
