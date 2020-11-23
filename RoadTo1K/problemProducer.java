@@ -8,11 +8,16 @@ public class problemProducer {
         int numOfLt = 1659;
         Random rand = new Random();
 //        int[] pros = new int[numOfLt + 1];
+        System.out.print(" ");
         for(int i = 0; i < 5; i++){
             int proNum = rand.nextInt(numOfLt) + 1;
-            System.out.print(proNum + ", ");
+            System.out.print(proNum);
+            if(i != 4){
+                System.out.print(", ");
+            }
 //            pros[proNum]++;
         }
+        System.out.println("<br>");
 //        int max = 0;
 //        for(int i = 0; i < numOfLt + 1; i++){
 //            System.out.print(pros[i] + " ");
