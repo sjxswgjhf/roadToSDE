@@ -1,15 +1,14 @@
 # 刷满1k题，每天记录刷了多少题。开始日期2020/11/17
-# 总计: 40/1000
+# 总计: 48/1000
 
 ## 11/17/2020
 ### Problem List: 
-
 Round1: 1549(SQL), 592, 1479(SQL), 10, 1330<br>
 Round2: 561, 628, 569(SQL), 1638, 264<br>
 Round3: 1545, 1175, 125, 1213, 14<br>
-
-总结: 
 Easy 6题, Medium 4题, Hard 2题， 共12题<br>
+
+总结: <br>
 Easy: 14, 561, 628, 1175, 125, 1213<br>
 Medium: 592, 1638, 264, 1545<br>
 Hard: 10, 1330(TLE)<br>
@@ -18,9 +17,9 @@ Hard: 10, 1330(TLE)<br>
 ## 11/18/2020
 ### Problem List: 
 Round1: 1000, 1026, 680, 930<br>
-Easy 1题， Medium 2题， Hard1题<br>
+Easy 1题， Medium 2题， Hard 1题<br>
 
-总结: 
+总结: <br>
 Easy: 680<br>
 Medium: 1026, 930<br>
 Hard: 1000<br>
@@ -32,8 +31,9 @@ Hard: 1000<br>
 Round 0: 1001(补上昨天剩下的一题)<br>
 Round 1: 915, 1315, 899, 1531(超标), 582<br>
 Round 2: 916, 354, 1228, 741, 127<br>
-Easy 1题， Medium 5题， Hard2题<br>
-总结: 
+Easy 1题， Medium 5题， Hard 2题<br>
+
+总结: <br>
 Easy: 1228<br>
 Medium: 915, 1315, 582, 916, 127<br>
 Hard: 1001, 899<br>
@@ -44,7 +44,9 @@ Hard: 1001, 899<br>
 Round 0: 354, 741(补上昨天剩下的两题)<br>
 Round 1: 868, 908, 237, 1459(SQL), 170<br>
 Round 2: 1333, 1627, 423, 1428, 247<br>
-总结: 
+Easy 4题， Medium 1题， Hard 2题<br>
+
+总结: <br>
 Easy: 868, 908, 237, 170<br>
 Medium: 1333<br>
 Hard: 354, 741<br>
@@ -59,7 +61,9 @@ Hard: 354, 741<br>
 Round 0: 1627, 423, 1428, 247<br>
 Round 1: 767, 177(SQL), 1089, 725, 886<br>
 Round 2: 1163, 410, 315, 1009, 897<br>
-总结: 
+Easy 2题， Medium 6题， Hard 1题<br>
+
+总结: <br>
 Easy: 1089, 897(算Medium,用O(h) space)<br>
 Medium: 423, 1428, 247, 767, 725, 886<br>
 Hard: 1627<br>
@@ -67,4 +71,18 @@ Hard: 1627<br>
 
 ##11/23/2020
 ### Problem list:
-Round 0: 1163, 410, 315, 1009
+Round 0: 1163（TLE）, 410, 315, 1009<br>
+Round 1: 1240, 394, 1425, 1199<br>
+
+
+总结:
+Easy: 1009(虽然是easy，但是有技巧)<br>
+Medium: 394<br>
+Hard: 1163, 410, 315, 1240(cheat with dp), 1425, 1199<br>
+什么鬼，random出来的全是Hard。操! 1284明天再啃，缓缓
+### 当日累积: 8/1000<br>
+
+##11/24/2020
+### Problem list:
+Round 0: 1284<br>
+Round 1: 1642, 1533, 156, 694, 311<br>
