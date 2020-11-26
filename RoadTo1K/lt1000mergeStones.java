@@ -48,6 +48,7 @@ public class lt1000mergeStones {
                         }
                     }
                     if(dp[i][j][K] != Integer.MAX_VALUE){
+                        //最后找到了i~j分成了K个piles的最小cost，我们再计算merge成1堆
                         dp[i][j][1] = dp[i][j][K] + prefix[j + 1] - prefix[i];
                     }
                 }

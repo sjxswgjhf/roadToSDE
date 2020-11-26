@@ -39,4 +39,49 @@ public class lt1175numPrimeArrangements {
         }
 
     }
+
+    /*
+    随机到了第二遍
+     */
+    class SolutionSecond {
+        /*
+        N numbers:
+
+        x prime, y not prime = x!*y!
+
+        */
+        int mod = (int)1e9 + 7;
+        public int numPrimeArrangements(int n) {
+            int primes = countPrimes(n);
+            return (int)(fac(primes) * fac(n - primes) % mod);
+        }
+
+        private long fac(int n){
+            long res = 1;
+            while(n >= 2){
+                res = (res * n) % mod;
+                n--;
+            }
+            return (res % mod);
+        }
+
+        private int countPrimes(int n){
+            int count = 0;  //include 1
+            for(int i = 2; i <= n; i++){
+                if(isPrime(i)){
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        private boolean isPrime(int num){
+            for(int i = 2; i * i <= num; i++){
+                if(num % i == 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
 }

@@ -4,6 +4,9 @@ import java.util.Stack;
 
 public class lt503nextGreaterElements {
     class Solution {
+        /*
+        走两边是确定的，并且从后往前，然后直观点是我们再加一倍的数字，从2n-1开始往前走
+         */
         public int[] nextGreaterElements(int[] nums) {
             int n = nums.length;
             int[] res = new int[n];
