@@ -112,5 +112,9 @@ Hard: 1000,<br>
 ### 当日累积: 9/1000<br>
 
 ##11/26/2020
+Happy Thanksgiving~~
+
+##11/27/2020
 ### Problem list:
 Round 0: 264<br>
+Round 1: 394, 339, 1571, 1053(SQL), 1107(SQL)<br>

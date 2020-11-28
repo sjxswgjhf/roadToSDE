@@ -50,4 +50,49 @@ public class lt394decodeString {
             return res;
         }
     }
+
+    class SolutionSecond {
+        //注意pop出来的要塞到前面去
+        public String decodeString(String s) {
+            Stack<Object> stack = new Stack<>();
+            int num = 0;
+
+            for(int i = 0; i < s.length(); i++){
+                char c = s.charAt(i);
+                if(Character.isDigit(c)){
+                    num = num * 10 + (c - '0');
+                }
+                else if(c == '['){
+                    stack.push(num);
+                    num = 0;
+                }
+                else if(c == ']'){
+                    String str = buildStr(stack);
+                    int freq = (Integer)(stack.pop());
+                    String tmp = "";
+                    for(int j = 0; j < freq; j++){
+                        tmp = tmp + str;
+                    }
+                    stack.push(tmp);
+                }
+                else{
+                    stack.push(String.valueOf(c));
+                }
+            }
+            String res = "";
+            while(!stack.isEmpty()){
+                res = stack.pop() + res;
+            }
+            return res;
+        }
+
+
+        private String buildStr(Stack<Object> stack){
+            String res = "";
+            while(!stack.isEmpty() && stack.peek() instanceof String){
+                res = stack.pop() + res;
+            }
+            return res;
+        }
+    }
 }
