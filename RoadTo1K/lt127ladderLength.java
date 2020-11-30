@@ -63,4 +63,49 @@ public class lt127ladderLength {
             return 0;
         }
     }
+
+    class SolutionSecond {
+        /*
+        做BFS,把list转换成hashset，如果当前set没有end直接return 0，不然就做bfs，
+        但是要注意遇到了list里面的word之后，要把这个word删掉，避免以后bfs的时候遇到，
+        降低复杂度
+        */
+        public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+            HashSet<String> set = new HashSet<>();
+            for(String word : wordList){
+                set.add(word);
+            }
+            if(!set.contains(endWord)){
+                return 0;
+            }
+            Queue<String> queue = new LinkedList<>();
+            int steps = 1;
+            queue.add(beginWord);
+            while(!queue.isEmpty()){
+                int size = queue.size();
+                steps++;
+                for(int i = 0; i < size; i++){
+                    String cur = queue.poll();
+                    char[] cs = cur.toCharArray();
+                    for(int j = 0; j < cur.length(); j++){
+                        char old = cs[j];
+                        for(char k = 'a'; k <= 'z'; k++){
+                            cs[j] = k;
+                            String tmp = new String(cs);
+                            if(tmp.equals(endWord)){
+                                return steps;
+                            }
+                            if(set.contains(tmp)){
+                                System.out.println(tmp);
+                                queue.add(tmp);
+                                set.remove(tmp);
+                            }
+                        }
+                        cs[j] = old;
+                    }
+                }
+            }
+            return 0;
+        }
+    }
 }
