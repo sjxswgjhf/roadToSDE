@@ -23,6 +23,7 @@ public class lt894allPossibleFBT {
      */
     class Solution {
         /*
+        这题跟lt95很像
         首先节点数量肯定是奇数,
         然后5的话里面有3的情况的解
 
