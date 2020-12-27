@@ -3,6 +3,90 @@ package BloombergOnsite;
 import java.util.HashMap;
 
 public class lt146LRU {
+
+    class LRUCache2ndTime {
+
+        class Node{
+            int key;
+            int val;
+            Node next;
+            Node prev;
+            public Node(int k, int v){
+                val = v;
+                key = k;
+            }
+        }
+
+        int capacity;
+        Node head = null;
+        Node tail = null;
+        HashMap<Integer, Node> map;
+        public LRUCache2ndTime(int capacity) {
+            this.capacity = capacity;
+            map = new HashMap<>();
+        }
+
+        public int get(int key) {
+            if(map.containsKey(key)){
+                Node node = map.get(key);
+                remove(node);
+                setHead(node);
+                return node.val;
+            }else{
+                return -1;
+            }
+        }
+
+        private void setHead(Node node){
+            if(head == null){
+                head = node;
+            }else{
+                node.prev = null;
+                node.next = head;
+                head.prev = node;
+                head = node;
+            }
+            if(tail == null){
+                tail = node;
+            }
+        }
+
+        private void remove(Node node){
+            if(node.prev != null){
+                node.prev.next = node.next;
+            }else{
+                head = node.next;
+            }
+            if(node.next != null){
+                node.next.prev = node.prev;
+            }else{
+                tail = node.prev;
+            }
+        }
+
+        public void put(int key, int value) {
+            if(map.containsKey(key)){
+                Node node = map.get(key);
+                node.val = value;
+                remove(node);
+                setHead(node);
+            }else{
+                if(map.size() < capacity){
+                    Node node = new Node(key, value);
+                    map.put(key, node);
+                    setHead(node);
+                }else{
+                    Node node = new Node(key, value);
+                    map.put(key, node);
+                    map.remove(tail.key);
+                    setHead(node);
+                    remove(tail);
+                }
+            }
+        }
+    }
+
+
     class LRUCache {
 
         /*
