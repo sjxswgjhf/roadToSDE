@@ -2,6 +2,65 @@ package BloombergOnsite;
 
 public class lt488ZumaGame {
 
+    class Solution2ND {
+        public int findMinStep(String board, String hand) {
+            int[] count = new int[26];
+            countBalls(hand, count);
+            return dfs(board, count);
+        }
+
+        private int dfs(String board, int[] count){
+            if(board.length() == 0){
+                return 0;
+            }
+            int res = Integer.MAX_VALUE;
+            int i = 0;
+            int j = 0;
+            while(i < board.length()){
+                while(j < board.length() && board.charAt(i) == board.charAt(j)){
+                    j++;
+                }
+                int color = board.charAt(i) - 'A';
+                int ballNeed = Math.max(0, 3 - (j - i));
+                if(count[color] >= ballNeed){
+                    String str = update(board.substring(0, i) + board.substring(j));
+                    count[color] -= ballNeed;
+                    int next = dfs(str, count);
+                    if(next >= 0){
+                        //后面需要的球数跟当前消耗的
+                        res = Math.min(res, next + ballNeed);
+                    }
+                    count[color] += ballNeed;
+                }
+                i = j;
+            }
+            return res == Integer.MAX_VALUE ? -1 : res;
+        }
+
+        private String update(String s){
+            int i = 0;
+            int j = 0;
+            String res = "";
+            while(i < s.length()){
+                j = i;
+                while(j < s.length() && s.charAt(i) == s.charAt(j)){
+                    j++;
+                }
+                if(j - i < 3){
+                    res += s.substring(i, j);
+                }
+                i = j;
+            }
+            return s;
+        }
+
+        private void countBalls(String hand, int[] count){
+            for(int i = 0; i < hand.length(); i++){
+                count[hand.charAt(i) - 'A']++;
+            }
+        }
+    }
+
     class Solution {
         /*
         整个逻辑：

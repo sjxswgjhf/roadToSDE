@@ -6,6 +6,55 @@ import java.util.List;
 
 public class lt1396UndergroundSystem {
 
+    class UndergroundSystem2ND{
+
+        class Node{
+            int id;
+            String startStation;
+            int time;
+            public Node(int id, String str, int t){
+                this.id = id;
+                this.startStation = str;
+                this.time = t;
+            }
+        }
+
+        HashMap<Integer, Node> nodeMap;
+        HashMap<String, HashMap<String, List<Integer>>> map;
+        public UndergroundSystem2ND() {
+            map = new HashMap<>();
+            nodeMap = new HashMap<>();
+        }
+
+        public void checkIn(int id, String stationName, int t) {
+            Node node = new Node(id, stationName, t);
+            nodeMap.put(id, node);
+        }
+
+        public void checkOut(int id, String stationName, int t) {
+            Node node = nodeMap.get(id);
+            HashMap<String, List<Integer>> table = map.getOrDefault(stationName, new HashMap<>());
+            List<Integer> list = table.getOrDefault(node.startStation, new ArrayList<>());
+            list.add(t - node.time);
+            table.put(node.startStation, list);
+            map.put(stationName, table);
+            nodeMap.remove(id);
+        }
+
+        public double getAverageTime(String startStation, String endStation) {
+            HashMap<String, List<Integer>> table = map.getOrDefault(endStation, new HashMap<>());
+            List<Integer> list = table.getOrDefault(startStation, new ArrayList<>());
+            double sum = 0.0;
+            for(int num : list){
+                sum += num;
+            }
+            if(list.size() == 0){
+                return 0.0;
+            }
+            return sum * 1.0 / list.size();
+        }
+    }
+
     class UndergroundSystem {
 
         class Node{
