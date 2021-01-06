@@ -1,6 +1,6 @@
 package binarysearch;
 
-public class lt77makingChange {
+public class bs77makingChange {
 
 /*
 贪心找离n最近的25，10，5，1
