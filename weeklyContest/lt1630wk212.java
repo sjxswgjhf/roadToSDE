@@ -1,8 +1,6 @@
 package weeklyContest;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class lt1630wk212 {
     /*
